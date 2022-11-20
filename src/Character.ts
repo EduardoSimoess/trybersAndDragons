@@ -5,11 +5,11 @@ import Race from './Races';
 import Elf from './Races/Elf';
 import getRandomInt from './utils';
 
-type Params = {
-  dexterity: number; 
-  energy: Energy;
-  name: string;
-};
+// type Params = {
+//   dexterity: number; 
+//   energy: Energy;
+//   name: string;
+// };
 
 export default class Character implements Fighter {
   private _race: Race;
@@ -21,10 +21,10 @@ export default class Character implements Fighter {
   private _dexterity: number;
   private _energy: Energy;
 
-  constructor(params: Params) {
+  constructor(name: string) {
     this._dexterity = getRandomInt(1, 10);
-    this._race = new Elf(params.name, this._dexterity);
-    this._archetype = new Mage(params.name);
+    this._race = new Elf(name, this._dexterity);
+    this._archetype = new Mage(name);
     this._maxLifePoints = this._race.maxLifePoints / 2;
     this._lifePoints = this._maxLifePoints;
     this._strength = getRandomInt(1, 10);
