@@ -10,7 +10,7 @@ export default class Mage extends Archetype {
     this.type_ = 'mana';
     Mage._creations += 1;
   }
-
+  
   static createdArchetypeInstances(): number {
     return this._creations;
   }
